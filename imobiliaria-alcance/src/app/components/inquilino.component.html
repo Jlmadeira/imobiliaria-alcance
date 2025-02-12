@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Cadastro de Inquilino</h2>
+  <form (ngSubmit)="saveInquilino()">
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" [(ngModel)]="inquilino.nome" name="nome" class="form-control" id="nome" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" [(ngModel)]="inquilino.email" name="email" class="form-control" id="email" required>
+    </div>
+    <div class="form-group">
+      <label for="telefone">Telefone</label>
+      <input type="text" [(ngModel)]="inquilino.telefone" name="telefone" class="form-control" id="telefone" required>
+    </div>
+    <button type="submit" class="btn btn-success">Cadastrar</button>
+  </form>
+
+  <div *ngIf="errorMessage" class="alert alert-danger mt-2">
+    {{ errorMessage }}
+  </div>
+  <div *ngIf="successMessage" class="alert alert-success mt-2">
+    {{ successMessage }}
+  </div>
+</div>
