@@ -1,0 +1,19 @@
+b.1) Escrever uma consulta SQL para trazer todos os imóveis que estão alugados com o nome do proprietário, valor e inquilino.
+b.2) Escrever uma consulta SQL para trazer todos os imóveis de um determinado proprietário
+b.3) Escrever uma consulta SQL para trazer todos os imóveis que não estejam alugados.
+
+
+
+
+1) SELECT i.endereco, p.nome AS proprietario, a.valor_aluguel, c.nome AS inquilino
+FROM imovel i
+JOIN aluguel a ON a.id_imovel = i.id
+JOIN proprietario p ON i.id_proprietario = p.id
+JOIN cliente c ON a.id_cliente = c.id;
+
+2) SELECT * FROM imovel WHERE id_proprietario = 'Fulano';
+
+3) SELECT * FROM imovel WHERE status = 'Disponível';
+
+
+
